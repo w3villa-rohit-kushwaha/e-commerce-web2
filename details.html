@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+             
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- *****************Bootstrap CDN********************************* -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- *******************Font awesome CDN **************************** -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- ******************Google Fonts********************************** -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gloock&family=Lobster&family=PT+Serif:ital@1&family=Poppins:ital,wght@1,200&family=Roboto:wght@100;400&family=Rubik&display=swap"
+            rel="stylesheet">
+        <title>JSON example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+      
+        <link href="crausel.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <link href="style2.css" rel="stylesheet">
+        <link href="details.css" rel="stylesheet">
+    </head>
+    <body>
+    <div id="header-js"></div>
+
+   
+<div class="container-fluid">
+        <div class="row">
+            <div id="showitem-heading"></div>
+            <div class="col-md-6">
+                <div id="product-img"> 
+                </div>
+        </div>
+       <div class="col-md-6">
+           <div>
+            <div id="showDes">
+
+            </div>
+        </div>
+     </div>
+     </div>
+</div>
+
+    <div id="footer"></div>
+
+  
+       <script>
+
+        // get the query string parameters from the URL
+       const params = new URLSearchParams(window.location.search);
+
+       // get the value of the "id" parameter
+        const productId = params.get("id");
+        
+        document.getElementById("product-img").innerHTML = `
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mt-3">
+                    <img src="img/phone.jpg"  height: 100px;width: 100px; class="img-fluid images">
+                    <img src="img/phone.jpg"  height: 100px;width: 100px; class="img-fluid images">
+                    <img src="img/phone.jpg"  height: 100px;width: 100px; class="img-fluid images">
+                    <img src="img/phone.jpg"  height: 100px;width: 100px; class="img-fluid images">
+                    </div>
+                    <div class="col-md-8 mt-4 main-img">
+                      <img src="img/phone.jpg">
+                        </div>
+                </div>
+            </div>
+        `;
+        document.getElementById("showitem-heading").innerHTML = `<h1>Item selected<hr class ="hrtag"> </h1>`;
+
+      document.getElementById("showDes").innerHTML = `
+      <div class="mt-4" style="display:flex;justify-content:space-around">
+      <div class="tab" id="description"><h6>DESCRIPTION</h6><div id="newhr"></div></div>
+     <div class="tab" id="specification"><h6>SPECIFICATIONS</h6><div id="newhr"></div></div>
+     <div class="tab" id="review"><h6>REVIEW</h6><div id="newhr"></div></div>
+     <div class="tab" id="custom-tabs"><h6>CUSTOM TABS</h6><div id="newhr"></div></div>
+     </div>
+     <div id="content">
+     <div id="description-content">Description content here</div>
+     <div id="specification-content">Specification content here</div>
+     <div id="review-content">Review content here</div>
+     <div id="custom-tabs-content">Custom tabs content here</div>
+     </div>
+     `;
+// Get all tab elements
+const tabs = document.querySelectorAll('.tab');
+
+// Get all content sections
+const contentSections = document.querySelectorAll('#content > div');
+
+// Add click event listeners to each tab
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove the "active" class from all tabs
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    // Add the "active" class to the clicked tab
+    tab.classList.add('active');
+    // Hide all content sections
+    contentSections.forEach(content => {
+      content.classList.remove('active');
+    });
+    // Show the corresponding content section
+    const id = tab.id + '-content';
+    document.getElementById(id).classList.add('active');
+  });
+});
+
+       </script>
+      <script src="footer.js"></script>
+      <script src="header.js"></script>
+      <script src="crausel.js"></script>
+     <script src="seach.js"></script>
+     <script src="script.js" ></script>
+    </body>
+</html>

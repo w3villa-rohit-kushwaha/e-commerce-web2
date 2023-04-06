@@ -1,0 +1,79 @@
+
+form #newsearch2{
+    margin-top: 30px;
+}
+@media (max-width:1185px)
+{
+.bottom-navbar-menu-container 
+{
+ display: none;
+}
+#newselect
+{
+    padding: 2% 100% !important;
+}
+form #newsearch
+{       
+  padding: 10px 40px!important;
+  
+}
+}
+@media(max-width:1773px)
+{
+    #newselect
+    {
+        padding: 3% 20% !important;
+    } 
+    form #newsearch2
+    {       
+        padding: 10px 40px!important;
+    }
+}
+@media(max-width:773px)
+{
+    #hidediv
+    {
+        display: none;
+    }
+    #newselect
+    {
+        padding: 3% 37% !important;
+        margin-left :0% !important;
+        
+    } 
+    form #newsearch2
+    {       
+        padding: 10px !important;
+    }
+    .newbox
+    {
+        display: none;
+    }
+}
+@media(max-width:768px)
+{
+d
+  .newbox
+  {
+      display: none;
+  }
+}
+@media(max-width:476px)
+{
+  
+    #newselect
+    {
+        padding: 3% 35% !important;
+        margin-left :0% !important;
+        
+    } 
+    .sort{
+        display: none;
+    }
+    .show{
+        display: none;
+    }
+   .Blue{
+    display: none;
+   }
+}
